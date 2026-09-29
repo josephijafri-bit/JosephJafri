@@ -5,7 +5,26 @@ A second year Geography student at the University of Manchester, focused on geos
 ## Projects
 
 ### Flood hazard calibration 🌊 (Ongoing Personal Project) 
-Modeled Flood extent from terrain data (HAND and slope), testing its similarities to Environment Agency flood zones. This process was automated to process uk national grid 5x5km squares. Data was stored and sorted in SQL to find the optimal HAND values for given areas. whats next?
+Modelled flood extent from terrain data (HAND and slope), and tested how well it
+reproduces real Environment Agency flood zones. The threshold search is automated
+in Python (arcpy) and has been run on 2 OS National Grid tiles — SK08SW (Peak
+District, hilly) and SO82SE (Severn Vale, flat floodplain) — with results analysed
+in SQL. Best overlap scores (CSI): 0.777 on SK08SW, 0.486 on SO82SE.
+
+The gap between tiles reveals a real pattern: performance depends on terrain
+relief. SK08SW's accuracy kept improving as the slope threshold widened, while
+SO82SE plateaued much earlier — flat terrain gives the HAND/slope method less
+signal to distinguish flood-prone areas.
+
+<img width="500" alt="Line chart of average CSI by slope threshold for two tiles" src="PASTE_YOUR_UPLOADED_IMAGE_LINK_HERE">
+
+*Average CSI by slope threshold, compared across both tiles. SK08SW keeps
+improving to slope=32; SO82SE plateaus after slope=12.*
+
+**Next steps:** extending this to housing/property exposure (density via OS Open
+UPRN, values via Price Paid + ONSPD) is planned future work.
+
+Modelled Flood extent from terrain data (HAND and slope), testing how well it reproduced Environment Agency flood zones. The parameter search was automated in python. Data was stored and sorted in SQL to find the optimal HAND  and slope values for given areas. This 
 currently creating an index for these flood extents to show severity through using flood accumulation values and identifying low lying flats. This will be compared to housing density and their respective values.
 
 ### Flood impacts to Gloucester Royal Hospital's functionality 🏥 (individual coursework)
