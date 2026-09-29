@@ -5,34 +5,40 @@ A second year Geography student at the University of Manchester, focused on geos
 ## Projects
 
 ### Flood hazard calibration 🌊 (Ongoing Personal Project) 
-Modelled flood extent from terrain data (HAND and slope), and tested how well it
-reproduces real Environment Agency flood zones. The threshold search is automated
-in Python (arcpy) and has been run on 2 OS National Grid tiles — SK08SW (Peak
-District, hilly) and SO82SE (Severn Vale, flat floodplain) — with results analysed
-in SQL. Best overlap scores (CSI): 0.777 on SK08SW, 0.486 on SO82SE.
 
-The gap between tiles reveals a real pattern: performance depends on terrain
-relief. SK08SW's accuracy kept improving as the slope threshold widened, while
-SO82SE plateaued much earlier — flat terrain gives the HAND/slope method less
-signal to distinguish flood-prone areas.
+Modelled Flood extent from terrain data (HAND and slope), testing how well it reproduced Environment Agency flood zones. The threshold search was automated in Python (arcpy) Within ArcGIS Pro. Data was stored and sorted in SQL to find the optimal HAND and slope values for given areas. This was then visualized in excel. 
 
-<img width="500" alt="Line chart of average CSI by slope threshold for two tiles" src="PASTE_YOUR_UPLOADED_IMAGE_LINK_HERE">
 
-*Average CSI by slope threshold, compared across both tiles. SK08SW keeps
-improving to slope=32; SO82SE plateaus after slope=12.*
+## Results
+Tested across 7 tiles, covering various terrain types:
 
-**Next steps:** extending this to housing/property exposure (density via OS Open
-UPRN, values via Price Paid + ONSPD) is planned future work.
+| Tile | Terrain | Best CSI |
+|---|---|---|
+| NY30NW (Lake District) | Upland | 0.876 |
+| TL89SW (Mundford) | Flat | 0.833 |
+| SK08SW (Peak District) | Upland | 0.777 |
+| SD88NE (Yorkshire Dales) | Upland | 0.724 |
+| SJ99NE (Stalybridge) | Urban valley | 0.532 |
+| SO82SE (Gloucester) | Flat | 0.481 |
+| TM59SW (Lowestoft) | Coastal | 0.120 |
 
-Modelled Flood extent from terrain data (HAND and slope), testing how well it reproduced Environment Agency flood zones. The parameter search was automated in python. Data was stored and sorted in SQL to find the optimal HAND  and slope values for given areas. This 
-currently creating an index for these flood extents to show severity through using flood accumulation values and identifying low lying flats. This will be compared to housing density and their respective values.
+<img width="1049" height="574" alt="image" src="https://github.com/user-attachments/assets/3cdc1349-f333-4f85-8ec5-c2473affe003" />
+
+*Upland tiles keep improving with a looser threshold; coastal barely responds.*
+
+<img width="1240" height="584" alt="image" src="https://github.com/user-attachments/assets/bc374be8-b23f-4395-a249-e467a61340b5" />
+
+*HAND treshold is unimportant after passing a low minimum across individual tiles.*
+
+## Next steps
+Classify severity using flood accumulation values and identifying low lying flats. This will be compared to housing density (OS Open UPRN) and property values.
 
 ### Flood impacts to Gloucester Royal Hospital's functionality 🏥 (individual coursework)
 Assessed how compound flood hazards affect the functionality of Gloucester Royal Hospital, using a multi-scale GIS analysis from the River Severn catchment down to individual roads and buildings. I combined LiDAR terrain data, Environment Agency flood datasets (recorded flood outlines and Risk of Flooding from Surface Water) and OS roads and buildings in QGIS, using 2 m contour analysis, elevation banding, vector overlay and zonal statistics. I found about 18 km of road across the study area within the flood extent, 70% of it A roads such as the A430 and A417. Although the hospital sits on high ground (19.3 m AOD), access would likely fail before the building itself is affected.
 
 <img width="969" height="766" alt="image" src="https://github.com/user-attachments/assets/b4c12e7b-9d82-420d-bd0c-3013cdb01dd2" />
 
-Figure shows A roads within the flood extent
+*Figure shows A roads within the flood extent.*
 
 
 ### Green infrastructure and PM2.5 in Manchester 🌳 (group project)
@@ -40,7 +46,7 @@ Investigated whether the size of a green space affects Particulate matter levels
 
 <img width="745" height="436" alt="Screenshot 2026-09-25 110409" src="https://github.com/user-attachments/assets/e2c97042-30f9-4b1b-998e-1bacf064bcac" />
 
-Figure shows an arial view of Platt Fields where the orange points display PM2.5 levels. (Made by group in ArcGIS)
+*Figure shows an arial view of Platt Fields where the orange points display PM2.5 levels. (Made by group in ArcGIS).*
 
 
 
