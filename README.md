@@ -6,13 +6,14 @@ A second year Geography student at the University of Manchester, focused on geos
 
 ### Flood hazard calibration 🌊 (Ongoing Personal Project) 
 
-Modelled Flood extent from terrain data (HAND and slope), testing how well it reproduced Environment Agency flood zones. The threshold search was automated in Python (arcpy) Within ArcGIS Pro. Data was stored and sorted in SQL to find the optimal HAND and slope values for given areas. This was then visualized in excel. 
+Modelled Flood extent from terrain data (HAND and slope), testing how well it reproduced Environment Agency flood zones. The threshold search was automated in Python (arcpy) Within ArcGIS Pro. Data was stored and sorted in SQL to find the optimal HAND and slope values for given areas. This was then visualized in excel. Extended to a first look at property exposure by linking Land Registry sales to the flood zones.
+
 
 
 ## Results
 Tested across 7 tiles, covering various terrain types:
 
-| Tile | Terrain | Best CSI |
+| Tile | Terrain | AVF CSI (slope 32) |
 |---|---|---|
 | NY30NW (Lake District) | Upland | 0.876 |
 | TL89SW (Mundford) | Flat | 0.833 |
@@ -30,8 +31,29 @@ Tested across 7 tiles, covering various terrain types:
 
 *HAND treshold is unimportant after passing a low minimum across individual tiles.*
 
+## Housing exposure
+
+To test the hazard layer against property, I linked Land Registry sales to
+Environment Agency flood zones for the SK postcode area. Sales were placed using
+postcode coordinates (ONSPD), intersected with EA Flood Zones 2 and 3, and
+compared with the median house price of the area they fall in (ONS small-area
+statistics).
+- 30 sales fell within floodzones: 63% in Zone 3, 37% in Zone 2.
+- Indicative value using area-median prices: roughly £7.1m.
+- Actual value: £16.5m, with one £2.35m sale skewing average.
+- 57% sold above their area's median,
+
+**Limitations:** one month of sales (a small sample); postcode-level locations
+are approximate; area medians are from an older period than the sales.
+
 ## Next steps
-Classify severity using flood accumulation values and identifying low lying flats. This will be compared to housing density (OS Open UPRN) and property values.
+- Use a full year of sales for a larger sample.
+- Add building counts from OS Open UPRN for density.
+- Repeat across other tiles.
+
+
+
+
 
 ### Flood impacts to Gloucester Royal Hospital's functionality 🏥 (individual coursework)
 Assessed how compound flood hazards affect the functionality of Gloucester Royal Hospital, using a multi-scale GIS analysis from the River Severn catchment down to individual roads and buildings. I combined LiDAR terrain data, Environment Agency flood datasets (recorded flood outlines and Risk of Flooding from Surface Water) and OS roads and buildings in QGIS, using 2 m contour analysis, elevation banding, vector overlay and zonal statistics. I found about 18 km of road across the study area within the flood extent, 70% of it A roads such as the A430 and A417. Although the hospital sits on high ground (19.3 m AOD), access would likely fail before the building itself is affected.
