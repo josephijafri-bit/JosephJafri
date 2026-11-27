@@ -6,12 +6,12 @@ A second year Geography student at the University of Manchester, focused on geos
 
 ### Flood hazard calibration 🌊 (Ongoing Personal Project) 
 
-Modelled Flood extent from terrain data (HAND and slope), testing how well it reproduced Environment Agency flood zones. The threshold search was automated in Python (arcpy) Within ArcGIS Pro. Data was stored and sorted in SQL to find the optimal HAND and slope values for given areas. This was then visualized in excel. Extended to a first look at property exposure by linking Land Registry sales to the flood zones.
+Modelled flood extent from terrain data (HAND and slope), testing how well it reproduced Environment Agency flood zones. The threshold search was automated in Python (arcpy) Within ArcGIS Pro. Data was stored and sorted in SQL to find the optimal HAND and slope values for given areas. This was then visualised in excel. Extended to a first look at property exposure by linking Land Registry sales to the flood zones.
 
 
 
 ## Results
-Tested across 7 tiles, covering various terrain types:
+Results of 7 tiles, covering various terrain types:
 
 | Tile | Terrain | AVF CSI (slope 32) |
 |---|---|---|
@@ -29,7 +29,7 @@ Tested across 7 tiles, covering various terrain types:
 
 <img width="1240" height="584" alt="image" src="https://github.com/user-attachments/assets/bc374be8-b23f-4395-a249-e467a61340b5" />
 
-*HAND treshold is unimportant after passing a low minimum across individual tiles.*
+*HAND threshold is unimportant after passing a low minimum across individual tiles.*
 
 ## Housing exposure
 
@@ -64,11 +64,11 @@ Assessed how compound flood hazards affect the functionality of Gloucester Royal
 
 
 ### Green infrastructure and PM2.5 in Manchester 🌳 (group project)
-Investigated whether the size of a green space affects Particulate matter levels (PM2.5 µg/m<sup>3</sup>) by comparing two parks in Manchester, Platt Fields Park and Gartside Gardens. We measured PM2.5 levels at 15 randomly sampled sites per park using a grid-based method, then analysed averages, spread and correlation. Average levels were similar in both parks, but the larger park varied more. A common finding was readings near trees were higher (r=0.71), showing a strong positive correlation. This supported the hypothesis that vegetation geometry mattered more than park size. I wrote the introduction, conclusion and half the discussion, and the group peer reviewed each others work.
+Investigated whether the size of a green space affects particulate matter levels (PM2.5 µg/m<sup>3</sup>) by comparing two parks in Manchester, Platt Fields Park and Gartside Gardens. We measured PM2.5 levels at 15 randomly sampled sites per park using a grid-based method, then analysed averages, spread and correlation. Average levels were similar in both parks, but the larger park varied more. A common finding was readings near trees were higher (r=0.71), showing a strong positive correlation. This supported the hypothesis that vegetation geometry mattered more than park size. I wrote the introduction, conclusion and half the discussion, and the group peer reviewed each other's work.
 
 <img width="745" height="436" alt="Screenshot 2026-09-25 110409" src="https://github.com/user-attachments/assets/e2c97042-30f9-4b1b-998e-1bacf064bcac" />
 
-*Figure shows an arial view of Platt Fields where the orange points display PM2.5 levels. (Made by group in ArcGIS).*
+*Figure shows an aerial view of Platt Fields where the orange points display PM2.5 levels. (Made by group in ArcGIS).*
 
 
 
